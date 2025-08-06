@@ -12,7 +12,7 @@ import rehypeHighlight from "rehype-highlight";
 function App() {
   const baseurl=import.meta.env.VITE_BASE_URL;
   const [code, setCode] = useState(`//Enter your Code here for review
-  }`)
+  `)
   const [review,setReview]=useState(``)
   useEffect(() => {
     prism.highlightAll()
