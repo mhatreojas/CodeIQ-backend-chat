@@ -9,8 +9,8 @@ import prism from 'prismjs'
 import axios from 'axios'
 import Markdown from 'react-markdown'
 import rehypeHighlight from "rehype-highlight";
-
 function App() {
+  const baseurl=import.meta.env.VITE_BASE_URL;
   const [code, setCode] = useState(`function add(){
   return 1+1;
   }`)
@@ -20,7 +20,7 @@ function App() {
   }, [])
 
 async function  reviewCode(){
-  const response=await axios.post('http://localhost:3000/ai/get-response', { code })
+  const response=await axios.post(`${baseurl}/ai/get-response`, { code })
   console.log(review.data)
   setReview(response.data )
 }
